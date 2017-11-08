@@ -1,0 +1,66 @@
+#!/usr/bin/bash
+
+##Assignment: Bash Script Week 7
+##Author: Sierra Smith (ssmith12@student.ncmich.edu)
+##Purpose
+
+#gobal
+
+main(){
+    clear
+    displayMenu
+}
+
+displayMenu() {
+    declare  test
+    echo -e "\033[1;36mWELCOME TO THE MACHINE \033[0;35m  \n___________________________\n \n\033[0;34m1.) Editing Commands \n\033[0;33m2.) Games \n\033[0;32m3.) User Administration \n\033[0;31m4.) Process Commands \n\033[0;95m5.) System Commands \n\033[0;94m6.) Network Commands \n\n\033[0;93mX.) MAIN MENU \n\n\033[0m"
+        #\033[1m links https://stackoverflow.com/questions/2924697/how-does-one-output-bold-text-in-bash, 0 normal, 1 bold, 2 dim 4 underline 5 blinking 7 reverse 8 invisible
+        #color link https://misc.flogisoft.com/bash/tip_colors_and_formatting
+        read  -p "Please make a seletion: " test
+    if [ $test == "1" ]
+    then
+        clear
+        echo -e "\033[1;34mEditing Commands Menu\033[0m"
+       # executeEditing
+     elif [ $test == "2" ]
+     then
+        clear
+        echo -e "\033[1;33mGames Menu\033[0m"
+      #  executeGames
+     elif [ $test == "3" ]
+     then
+        clear
+         echo -e "\033[1;32mUser Administration Menu\033[0m"
+      #  executeUser #not what it sounds like, I promise
+     elif [ $test == "4" ]
+ then
+        clear
+       echo -e "\033[1;31mProcess Commands Menu\033[0m"
+      # executeProcess
+     elif [ $test == "5" ]
+     then
+        clear
+        echo -e "\033[1;95mSystem Commands Menu\033[0m"
+       # executeSystem
+     elif [ $test == "6" ]
+     then
+        clear
+        echo -e "\033[1;94mNetwork Commands Menu\033[0m"
+    #    executeNetwork
+     elif [ $test == "X" ]
+     then
+        clear
+        echo -e "\033[1;93m\nGoing Home Now\n\033[0m"
+        sleep 2
+        clear
+        displayMenu
+     else
+        clear
+        echo -e "\033[1;92m\nSorry selection not found, please try again\n\033[0m"
+        sleep 2
+        clear
+        displayMenu
+     fi
+}
+
+main
